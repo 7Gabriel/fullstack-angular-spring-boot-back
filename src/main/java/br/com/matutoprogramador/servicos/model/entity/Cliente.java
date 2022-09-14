@@ -23,12 +23,12 @@ public class Cliente {
     private Long id;
 
     @Column(nullable = false, length = 150)
-    @NotEmpty(message = "Nome é Obrigatório")
+    @NotEmpty(message = "{field.nome.obrigatorio}")
     private String name;
 
     @Column(nullable = false, length = 11)
-    @NotNull
-    @CPF(message = "CPF Inválido")
+    @NotNull(message = "{field.cpf.obrigatorio}")
+    @CPF(message = "{field.cpf.invalido}")
     private String cpf;
 
     private LocalDate createdDate;
