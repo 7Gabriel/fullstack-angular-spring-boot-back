@@ -4,19 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.CreatedBy;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Builder
 @Entity
 @Data
 @AllArgsConstructor @NoArgsConstructor
-@EntityListeners(AuditingEntityListener.class)
 public class Servico {
 
     @Id
@@ -32,9 +28,6 @@ public class Servico {
 
     private BigDecimal valor;
 
-    @CreatedDate
-    private Timestamp createdDate;
+    private LocalDate dataServico;
 
-    @CreatedBy
-    private String createdBy;
 }
